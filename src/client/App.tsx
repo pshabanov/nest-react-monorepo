@@ -1,8 +1,23 @@
-import React from 'react'
-import { render } from 'react-dom'
+import React, { useEffect, useState } from 'react'
+import { createRoot } from 'react-dom/client'
+import { HelloResponse } from '../common/HelloResponse'
 
-const App = () => {
-    return <h1>Hello world from react</h1>
+const root = createRoot(
+    document.getElementById('root') as HTMLElement,
+)
+
+const App = () =>{
+    const [text, setText] = useState<string>('')
+    useEffect(()=>{
+        fetch('/api/hello')
+            .then<HelloResponse>(response=>response.json())
+            .then(res=>setText(res.text))
+        },
+        [])
+    return (
+        <h1>{text}</h1>
+    )
 }
 
-render(<App />, document.querySelector('#app'))
+
+root.render(<App/>)
