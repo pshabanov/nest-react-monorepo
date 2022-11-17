@@ -24,11 +24,4 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        new CopyPlugin({
-            patterns: [
-                { from: "./src/client/index.html", to: "" },
-            ],
-        }),
-    ],
 }

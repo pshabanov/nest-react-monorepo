@@ -1,12 +1,12 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { Controller, Get, Render } from '@nestjs/common'
 
-@Controller('api')
+@Controller('')
 export class AppController {
-  constructor(private readonly appService: AppService) {}
 
-  @Get('hello')
-  getHello(): object {
-    return this.appService.getHello();
-  }
+    @Get('')
+    @Render('index')
+    root() {
+
+        return { message: 'Hello world from Template HBS!' };
+    }
 }

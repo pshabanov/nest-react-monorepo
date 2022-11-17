@@ -1,5 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "server"
+  "sourceRoot": "server",
+  "compilerOptions": {
+    "assets": [
+      "./views/*.hbs"
+    ]
+  }
 }
