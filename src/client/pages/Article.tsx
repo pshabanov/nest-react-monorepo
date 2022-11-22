@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import ReactMarkdown from 'react-markdown'
 
 export const Article:FC = () => {
 
@@ -13,6 +14,8 @@ export const Article:FC = () => {
     }, [])
 
     return (
-        <>{article}</>
+        <>
+            <ReactMarkdown>{article}</ReactMarkdown>
+        </>
     )
 }
