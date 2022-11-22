@@ -9,6 +9,7 @@ async function bootstrap() {
   app.setBaseViewsDir(join(__dirname, 'views'));
   app.setViewEngine('hbs');
   await app.listen(3000);
+
   console.log(`SERVER started on port: http://localhost:3000`)
 }
 bootstrap();

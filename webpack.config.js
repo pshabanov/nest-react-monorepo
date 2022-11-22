@@ -1,15 +1,14 @@
 const path = require("path");
-const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     mode: "production",
-    entry: './src/client/App.tsx',
+    entry: './src/client/index.tsx',
     output: {
         path: path.resolve(__dirname, 'public'),
         filename: "bundle.js"
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js']
+        extensions: ['.ts', '.tsx', '.js', '.css'],
     },
     module: {
         rules: [
@@ -19,6 +18,15 @@ module.exports = {
                 use: [
                     {
                         loader: "ts-loader"
+                    }
+                ]
+            },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'css-loader',
                     }
                 ]
             }

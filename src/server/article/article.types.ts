@@ -1,1 +1,1 @@
-export type ArticleListResponse = {}
+export type ArticleListResponse = string[]

@@ -1,0 +1,14 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.top-navigation a{
+    padding: 5px 15px;
+}
+body {
+    background-color: red;
+}
