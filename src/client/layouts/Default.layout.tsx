@@ -4,19 +4,19 @@ import { About } from '../pages/About'
 import { ArticleList } from '../pages/ArticleList'
 import { NotFoundPage } from '../pages/NotFoundPage'
 import { Article } from '../pages/Article'
+import styles from './Default.module.css'
 
 export const DefaultLayout = () =>{
     return (
         <>
             <header>
                 <nav>
-                    <ul>
+                    <ul className={styles.linkList}>
                         <Link to='/'>Главная</Link>
                         <Link to='/about'>О нас</Link>
                         <Link to='/articles'>Статьи</Link>
                     </ul>
                 </nav>
-
                 <Routes>
                     <Route path='/' element={<Home/>}/>
                     <Route path='/about' element={<About/>}/>
@@ -25,8 +25,9 @@ export const DefaultLayout = () =>{
                     <Route path='*' element={<NotFoundPage/>}/>
                 </Routes>
             </header>
-
             <footer>
+                <div className={styles.linkList}>123123</div>
+                {styles.linkList}
                 Футер
             </footer>
         </>
