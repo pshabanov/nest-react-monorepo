@@ -1,25 +1,25 @@
-import React, { FC, HTMLProps, useState } from 'react'
+import React, { FC, useState } from 'react'
+import Header from "../components/Header";
+import Categories from '../components/Categories'
+import Sort from '../components/Sort'
+import PizzaList from '../components/PizzaList'
+import pizzas from '../data/pizzas'
 
-export const Home = () => {
-    const [count, setCount] = useState<number>(0)
-    const addCount = () => {
-        setCount(count + 1)
-    }
-
+export const Home:FC = () => {
+    const [pizza, setPizza] = useState(pizzas)
     return (
-        <>
-            <h1>hello from react! Count: { count }</h1>
-            <Button updateData={ addCount }>Add to counter</Button>
-        </>
-    )
-}
-
-interface InputButtonProps extends HTMLProps<HTMLButtonElement> {
-    updateData: Function
-}
-
-const Button: FC<InputButtonProps> = ({children, updateData}) => {
-    return (
-        <button onClick={ () => updateData() }>{ children }</button>
-    )
+        <div className="wrapper">
+            <Header/>
+            <div className="content">
+                <div className="container">
+                    <div className="content__top">
+                        <Categories/>
+                        <Sort/>
+                    </div>
+                    <h2 className="content__title">Все пиццы</h2>
+                    <PizzaList items={pizza} />
+                </div>
+            </div>
+        </div>
+    );
 }

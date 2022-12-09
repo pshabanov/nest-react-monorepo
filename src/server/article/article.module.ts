@@ -7,4 +7,5 @@ import { ArticleController } from './article.controller'
     providers: [ArticleService, ConfigService],
     controllers: [ArticleController]
 })
+
 export class ArticleModule{}

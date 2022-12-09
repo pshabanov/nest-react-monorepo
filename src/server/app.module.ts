@@ -14,5 +14,6 @@ import * as path from 'path'
     ],
     controllers: [AppController],
 })
+
 export class AppModule {
 }

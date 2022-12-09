@@ -18,5 +18,4 @@ export class ArticleController {
         const fileStream = this._articleService.getArticle(name)
         fileStream.pipe(res);
     }
-
 }

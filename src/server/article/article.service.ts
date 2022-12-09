@@ -13,7 +13,6 @@ export class ArticleService {
 
     constructor(private readonly _configService: ConfigService) {}
 
-
     getList():Promise<ArticleListResponse>{
         return promisifiedReadDir(path.join(this._configService.get('dataPath'), 'articles'))
     }
